@@ -1,0 +1,9 @@
+foo_func = one -> (
+  a = one + 2 + 3;
+  if one then
+    a + 4
+  else
+    a
+);
+
+foo_func 1

@@ -1,0 +1,54 @@
+{
+  "tag": "body",
+  "body": [
+    {
+      "tag": "name",
+      "name": "foo_func",
+      "body": {
+        "tag": "function",
+        "param": "one",
+        "body": {
+          "tag": "body",
+          "body": [
+            {
+              "tag": "name",
+              "name": "a",
+              "body": {
+                "tag": "op",
+                "op": "add",
+                "lhs": {
+                  "tag": "op",
+                  "op": "add",
+                  "lhs": { "tag": "reference", "name": "one" },
+                  "rhs": { "tag": "literal", "value": 2 }
+                },
+                "rhs": { "tag": "literal", "value": 3 }
+              }
+            },
+            {
+              "tag": "if",
+              "cond": {
+                "tag": "op",
+                "op": "sgt",
+                "lhs": { "tag": "reference", "name": "one" },
+                "rhs": { "tag": "literal", "value": 1 }
+              },
+              "then": {
+                "tag": "op",
+                "op": "add",
+                "lhs": { "tag": "reference", "name": "a" },
+                "rhs": { "tag": "literal", "value": 4 }
+              },
+              "else": { "tag": "reference", "name": "a" }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tag": "call",
+      "caller": { "tag": "reference", "name": "foo_func" },
+      "arg": { "tag": "literal", "value": 1 }
+    }
+  ]
+}
